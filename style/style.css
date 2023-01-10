@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+
+/* pseudo selector para selecionar todo o documento */
+:root{
+    --text-color: white;/*variável para aplicar cor a tudo o que seja cor branca*/
+    --bg-color:  #2e2c25;
+    --stroke-color: rgba(211, 211, 211, 0.2);
+    --hover-color:rgba(230, 230, 230, 0.495);
+    --switch:white url(../assets/images/moonstars.svg) no-repeat center;
+}
+
+.light{
+    --text-color: black;
+    --bg-color: azure;
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --hover-color:rgba(0, 0, 0, 0.3);
+    --switch:rgb(239, 214, 132) url(../assets/images/sun.svg) no-repeat center;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.container{
+    width: 360px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+.profile{
+    text-align: center;
+    padding: 24px;
+}
+
+.profile img{
+    width: 112px;
+    height: 112px;
+    object-fit:cover;
+    border: 1px solid grey;
+    border-radius: 50%;
+}
+
+.profile h1{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* switch */
+
+.light-mode{
+    position: relative;
+    width: 64px;
+    margin: 4px auto; /*Para alinhamento de elementos do tipo block*/
+}
+.light-mode button{
+    width: 32px;
+    height: 32px;
+    background: var(--switch);
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;/*este posicionamento é relativo ao position da class máe, neste caso,.light-mode*/
+    top:50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+
+}
+
+.light .light-mode button{
+    right: 0;
+    left: initial;
+}
+
+.light-mode span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--stroke-color);
+    border: 1px solid var(--stroke-color);
+    border-radius:15px;
+}
+
+
+
+.links-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0px ;
+}
+
+.links-list li {
+    border: 1.5px solid var(--stroke-color);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.2);
+    transition: background 0.3s;
+}
+
+.links-list a{
+    display: flex;
+    justify-content: center;    
+}
+
+.links-list li:hover{
+    background-color: var(--hover-color);
+    border-color:  var(--text-color);
+}
+
+.social-links-list{
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    justify-content: center;
+    
+}
+
+.social-links-list a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding: 16px;
+    transition: background 0.3s;
+    border-radius: 50%;
+}
+
+.social-links-list a:hover{
+    background: var(--hover-color);
+    padding:16px;
+    border-radius: 50%;
+}
+
+footer{
+    padding: 24px 0px;
+    text-align: center; /*para alinhamento de elementos inline*/
+    font-size: 14px;
+}
+
+footer a{
+    text-decoration: underline
+}
+
+

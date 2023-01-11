@@ -80,11 +80,17 @@ a{
     z-index: 1;
     transform: translateY(-50%);
 
+    animation: slide-back .4s;
+
+}
+
+.light-mode button:hover{
+    outline: 8px solid var(--hover-color);
+    transition: 0.4s;
 }
 
 .light .light-mode button{
-    right: 0;
-    left: initial;
+    animation: slide-in .4s forwards;
 }
 
 .light-mode span{
@@ -162,7 +168,7 @@ footer a{
 
 /*Media Queries*/
 
-@media(min-width:700px) {
+/* @media(min-width:700px) {
     :root{
         --bg-color:  Blue;
     }
@@ -171,4 +177,22 @@ footer a{
         --bg-color: yellow;
     }
 
+} */
+
+@keyframes slide-in{
+    from{
+        left:0;
+    }
+    to{
+        left:50%;
+    }
+}
+
+@keyframes slide-back{
+    from{
+        left:50%;
+    }
+    to{
+        left:0;
+    }
 }

@@ -25,6 +25,7 @@ body{
     background-color: var(--bg-color);
     font-family: 'Nunito', sans-serif;
     color: var(--text-color);
+    height: 100vh;
 }
 
 a{
@@ -159,3 +160,15 @@ footer a{
 }
 
 
+/*Media Queries*/
+
+@media(min-width:700px) {
+    :root{
+        --bg-color:  Blue;
+    }
+
+    .light{
+        --bg-color: yellow;
+    }
+
+}
